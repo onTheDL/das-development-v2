@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { cloneDeep } from "lodash";
 import Lottie from "react-lottie";
-import ButtonArrow from "./ui/ButtonArrow";
+import ButtonArrow from "../src/ui/ButtonArrow";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Grid,
@@ -18,32 +18,11 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 
-import check from "../assets/check.svg";
-import send from "../assets/send.svg";
-import software from "../assets/software.svg";
-import mobile from "../assets/mobile.svg";
-import website from "../assets/website.svg";
-import backArrow from "../assets/backArrow.svg";
-import backArrowDisabled from "../assets/backArrowDisabled.svg";
+import estimateAnimation from "../src/animations/estimateAnimation/data.json";
+
 const forwardArrow = "/assets/forwardArrow.svg";
 const forwardArrowDisabled = "/assets/forwardArrowDisabled.svg";
-import camera from "../assets/camera.svg";
-import upload from "../assets/upload.svg";
-import person from "../assets/person.svg";
-import persons from "../assets/persons.svg";
-import info from "../assets/info.svg";
-import bell from "../assets/bell.svg";
-import people from "../assets/people.svg";
-import users from "../assets/users.svg";
-import iPhone from "../assets/iphone.svg";
-import gps from "../assets/gps.svg";
-import customized from "../assets/customized.svg";
-import data from "../assets/data.svg";
-import android from "../assets/android.svg";
-import globe from "../assets/globe.svg";
-import biometrics from "../assets/biometrics.svg";
 
-import estimateAnimation from "../src/animations/estimateAnimation/data.json";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -131,7 +110,7 @@ const softwareQuestions = [
         id: 1,
         title: "Web Application",
         subtitle: null,
-        icon: "/assets/websites.svg",
+        icon: "/assets/website.svg",
         iconAlt: "computer outline",
         selected: false,
         cost: 100,

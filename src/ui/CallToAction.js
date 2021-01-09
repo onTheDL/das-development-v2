@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "../Link"
 import { Grid, Typography, Button, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ButtonArrow from "./ButtonArrow";
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   background: {
-    backgroundImage: url("/assets/background.jpg"),
+    backgroundImage: `url("/assets/background.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundAttachment: "fixed", //parallax
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     height: "60em",
     width: "100%",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: url("/assets/mobileBackground.jpg"),
+      backgroundImage: `url("/assets/mobileBackground.jpg")`,
       backgroundAttachment: "inherit", //back to static
     },
   },
@@ -81,7 +81,7 @@ export default function CallToAction({ setValue, setSelectedIndex }) {
             <Grid container item justify={matchesSM ? "center" : "undefined"}>
               <Button
                 component={Link}
-                to="/services"
+                href="/services"
                 variant="outlined"
                 className={classes.learnBtn}
                 onClick={() => {setValue(1); setSelectedIndex(0)}}
@@ -100,7 +100,7 @@ export default function CallToAction({ setValue, setSelectedIndex }) {
       <Grid item>
         <Button
           component={Link}
-          to="/estimate"
+          href="/estimate"
           variant="contained"
           className={classes.estimateBtn}
           onClick={() => setValue(5)}

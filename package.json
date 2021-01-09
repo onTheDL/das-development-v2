@@ -3,7 +3,10 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "latest",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.2",
+    "axios": "^0.21.1",
     "clsx": "latest",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
@@ -12,7 +15,8 @@
     "next-optimized-images": "^2.6.2",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-lottie": "^1.2.3"
   },
   "scripts": {
     "dev": "next",

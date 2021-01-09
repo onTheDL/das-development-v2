@@ -14,11 +14,12 @@ import {
   List,
   ListItem,
   ListItemText,
+  Hidden,
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { Link } from "react-router-dom";
+import Link from "../Link";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -184,7 +185,9 @@ export default function Header({
           }
           break;
         case "/estimate":
-          setValue(5);
+          if (value !== 5) {
+            setValue(5);
+          }
           break;
         default:
           break;
@@ -226,7 +229,7 @@ export default function Header({
             key={route.name}
             className={classes.tab}
             component={Link}
-            to={route.link}
+            href={route.link}
             label={route.name}
             aria-owns={route.ariaOwns}
             aria-haspopup={route.ariaPopup}
@@ -239,7 +242,7 @@ export default function Header({
         color="secondary"
         className={classes.button}
         component={Link}
-        to="/estimate"
+        href="/estimate"
         onClick={() => setValue(5)}
       >
         Free Estimate
@@ -260,7 +263,7 @@ export default function Header({
             key={`${option}${i}`}
             classes={{ root: classes.menuItem }}
             component={Link}
-            to={option.link}
+            href={option.link}
             onClick={(event) => {
               handleMenuItemClick(event, i);
               setValue(1);
@@ -297,7 +300,7 @@ export default function Header({
               divider
               button
               component={Link}
-              to={route.link}
+              href={route.link}
               selected={value === route.activeIndex}
               classes={{ selected: classes.drawerItemSelected }}
             >
@@ -315,7 +318,7 @@ export default function Header({
             divider
             button
             component={Link}
-            to="/estimate"
+            href="/estimate"
             classes={{
               root: classes.drawerItemEstimate,
               selected: classes.drawerItemSelected,
@@ -345,7 +348,7 @@ export default function Header({
           <Toolbar disableGutters>
             <Button
               component={Link}
-              to="/"
+              href="/"
               onClick={() => setValue(0)}
               className={classes.logoContainer}
               disableRipple
@@ -356,8 +359,10 @@ export default function Header({
                 className={classes.logo}
               />
             </Button>
-
-            {matches ? drawer : tabs}
+            {/* Used hidden styling to fix glitch when page loads or refreshes*/}
+            <Hidden mdDown>{tabs}</Hidden>
+            <Hidden lgUp>{drawer}</Hidden>
+            {/* {matches ? drawer : tabs} */}
           </Toolbar>
         </AppBar>
       </ElevationScroll>

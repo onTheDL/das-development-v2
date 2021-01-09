@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "../Link";
 import { makeStyles, Grid, Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -68,7 +68,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(0)}
                 component={Link}
-                to="/"
+                href="/"
                 className={classes.link}
               >
                 Home
@@ -85,7 +85,7 @@ export default function Footer({
                   setSelectedIndex(0);
                 }}
                 component={Link}
-                to="/services"
+                href="/services"
                 className={classes.link}
               >
                 Services
@@ -97,7 +97,7 @@ export default function Footer({
                   setSelectedIndex(1);
                 }}
                 component={Link}
-                to="/customsoftware"
+                href="/customsoftware"
                 className={classes.link}
               >
                 Custom Software
@@ -109,7 +109,7 @@ export default function Footer({
                   setSelectedIndex(2);
                 }}
                 component={Link}
-                to="/mobileapps"
+                href="/mobileapps"
                 className={classes.link}
               >
                 iOS/Android App Development
@@ -121,7 +121,7 @@ export default function Footer({
                   setSelectedIndex(3);
                 }}
                 component={Link}
-                to="/websites"
+                href="/websites"
                 className={classes.link}
               >
                 Website Development
@@ -135,7 +135,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(2)}
                 component={Link}
-                to="/revolution"
+                href="/revolution"
                 className={classes.link}
               >
                 The Revolution
@@ -144,7 +144,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(2)}
                 component={Link}
-                to="/revolution"
+                href="/revolution"
                 className={classes.link}
               >
                 Vision
@@ -153,7 +153,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(2)}
                 component={Link}
-                to="/revolution"
+                href="/revolution"
                 className={classes.link}
               >
                 Technology
@@ -162,7 +162,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(2)}
                 component={Link}
-                to="/revolution"
+                href="/revolution"
                 className={classes.link}
               >
                 Process
@@ -176,7 +176,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(3)}
                 component={Link}
-                to="/about"
+                href="/about"
                 className={classes.link}
               >
                 About Us
@@ -185,7 +185,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(3)}
                 component={Link}
-                to="/about"
+                href="/about"
                 className={classes.link}
               >
                 History
@@ -194,7 +194,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(3)}
                 component={Link}
-                to="/about"
+                href="/about"
                 className={classes.link}
               >
                 Team
@@ -208,7 +208,7 @@ export default function Footer({
                 item
                 onClick={() => setValue(4)}
                 component={Link}
-                to="/contact"
+                href="/contact"
                 className={classes.link}
               >
                 Contact Us

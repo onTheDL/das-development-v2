@@ -1,5 +1,6 @@
 import React from "react";
-import CallToAction from "../src/ui/CallToAction"
+import Head from "next/head";
+import CallToAction from "../src/ui/CallToAction";
 import Lottie from "react-lottie";
 import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -10,7 +11,6 @@ import {
   useMediaQuery,
   Hidden,
 } from "@material-ui/core";
-
 
 import documentsAnimation from "../src/animations/documentsAnimation/data";
 import scaleAnimation from "../src/animations/scaleAnimation/data.json";
@@ -43,7 +43,6 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-
 
   const documentsOptions = {
     loop: true,
@@ -83,13 +82,18 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="column">
+      <Head>
+        <title key="title">
+          Custom Software Development and Design - Free Estimate
+        </title>
+      </Head>
       <Grid
         item
         container
         direction="row"
         justify={matchesMD ? "center" : undefined}
         className={classes.rowContainer}
-        style={{marginTop: matchesXS ? "1em" : "2em"}}
+        style={{ marginTop: matchesXS ? "1em" : "2em" }}
       >
         <Hidden mdDown>
           <Grid
@@ -175,7 +179,10 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
               href="/mobileapps"
               onClick={() => setSelectedIndex(2)}
             >
-              <img src="/assets/forwardArrow.svg" alt="Forward to Mobile Apps" />
+              <img
+                src="/assets/forwardArrow.svg"
+                alt="Forward to Mobile Apps"
+              />
             </IconButton>
           </Grid>
         </Hidden>

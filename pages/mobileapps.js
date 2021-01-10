@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head"
 import Lottie from "react-lottie";
 import CallToAction from "../src/ui/CallToAction"
 import Link from "../src/Link";
@@ -56,6 +57,11 @@ export default function MobileApps({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="column">
+      <Head>
+        <title key='title'>
+          iOS/Android App Design and Development | DAS Development
+        </title>
+      </Head>
       <Grid
         item
         container

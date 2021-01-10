@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import CallToAction from "../src/ui/CallToAction";
 import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -47,6 +48,12 @@ export default function Websites({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="column">
+      {/* SEO */}
+      <Head>
+        <title key="title">
+          Stunning Custom Website Design | DAS Development
+        </title>
+      </Head>
       <Grid
         item
         container

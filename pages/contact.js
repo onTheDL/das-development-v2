@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head"
 import axios from "axios";
 import Link from "../src/Link"
 import ButtonArrow from "../src/ui/ButtonArrow";
@@ -189,7 +190,11 @@ export default function Contact({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction='row'>
-      
+      {/* Title Tag for SEO */}
+      <Head>
+        <title key='title'>Contact Us | DAS Development</title>
+      </Head>
+
       {/*----- FORM SECTION -----*/}
       <Grid
         item

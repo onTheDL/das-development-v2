@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Button, useMediaQuery, Typography } from "@material-ui/core";
@@ -50,6 +51,13 @@ export default function Services({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="column">
+      
+      {/* SEO */}
+      <Head>
+        <title key="title">
+          Reliable Custom Software Development Services | DAS Development
+        </title>
+      </Head>
       <Grid
         item
         style={{

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Lottie from "react-lottie";
 import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -147,37 +148,256 @@ export default function LandingPage({ setValue, setSelectedIndex }) {
     },
   };
   return (
-    <>
-      <Grid container direction="column" className={classes.mainContainer}>
-        <Grid item>
-          {" "}
-          {/*-----Hero Block -----*/}
+    <Grid container direction="column" className={classes.mainContainer}>
+
+      <Head>
+        <title key="title">
+          Custom Software, iOS / Android Apps, and Websites | DAS Development
+        </title>
+      </Head>
+      <Grid item>
+        {" "}
+        {/*-----Hero Block -----*/}
+        <Grid container direction="row" justify="flex-end" alignItems="center">
+          <Grid sm item className={classes.heroTextContainer}>
+            <Typography variant="h2" align="center">
+              <span className={classes.specialLetter}>D</span>eveloping{" "}
+              <span className={classes.specialLetter}>A</span>wesome{" "}
+              <span className={classes.specialLetter}>S</span>oftware <br />
+              D.A.S. is good!
+            </Typography>
+
+            <Grid container justify="center" className={classes.btnContainer}>
+              <Grid item>
+                <Button
+                  component={Link}
+                  href="/estimate"
+                  className={classes.estimateBtn}
+                  variant="contained"
+                  onClick={() => setValue(5)}
+                >
+                  Free Estimate
+                </Button>
+              </Grid>
+
+              <Grid item>
+                <Button
+                  component={Link}
+                  href="/revolution"
+                  className={classes.learnBtnHero}
+                  variant="outlined"
+                  onClick={() => setValue(2)}
+                >
+                  <span style={{ marginRight: 10 }}>Learn More</span>
+                  <ButtonArrow
+                    width={15}
+                    height={15}
+                    fill={theme.palette.common.blue}
+                  />
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid sm item className={classes.animation}>
+            <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid item>
+        {" "}
+        {/*-----Custom Development Block-----*/}
+        <Grid
+          container
+          direction="row"
+          justify={matchesSM ? "center" : undefined}
+          className={classes.serviceContainer}
+        >
           <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center"
+            item
+            style={{
+              marginLeft: matchesSM ? 0 : "5em",
+              textAlign: matchesSM ? "center" : undefined,
+            }}
           >
-            <Grid sm item className={classes.heroTextContainer}>
-              <Typography variant="h2" align="center">
-                <span className={classes.specialLetter}>D</span>eveloping <span className={classes.specialLetter}>A</span>wesome <span className={classes.specialLetter}>S</span>oftware <br />
-                D.A.S. is good!
-              </Typography>
+            <Typography variant="h4">Custom Software Development</Typography>
+            <Typography variant="subtitle1" className={classes.subtitle}>
+              Save Time. Save Energy. Save Money.
+            </Typography>
+            <Typography variant="subtitle1">
+              Complete digital solutions, from investigation to{" "}
+              <span className={classes.specialText}>celebration.</span>
+            </Typography>
+            <Button
+              component={Link}
+              href="/customsoftware"
+              variant="outlined"
+              className={classes.learnBtn}
+              onClick={() => {
+                setValue(1);
+                setSelectedIndex(1);
+              }}
+            >
+              <span style={{ marginRight: 10 }}>Learn More</span>
+              <ButtonArrow
+                width={10}
+                height={10}
+                fill={theme.palette.common.blue}
+              />
+            </Button>
+          </Grid>
 
-              <Grid container justify="center" className={classes.btnContainer}>
+          <Grid item>
+            <img
+              className={classes.icon}
+              src={customSoftwareIcon}
+              alt="custom software icon"
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid item>
+        {" "}
+        {/*-----iOS/Android Block-----*/}
+        <Grid
+          container
+          direction="row"
+          justify={matchesSM ? "center" : "flex-end"}
+          className={classes.serviceContainer}
+        >
+          <Grid
+            item
+            style={{
+              textAlign: matchesSM ? "center" : undefined,
+            }}
+          >
+            <Typography variant="h4">iOS/Android App Development</Typography>
+            <Typography variant="subtitle1" className={classes.subtitle}>
+              Extend Functionality. Extend Access. Increase Engagement.
+            </Typography>
+            <Typography variant="subtitle1">
+              Integrate your web experience or create a standalone app
+              {matchesSM ? null : <br />} with either mobile platform.
+            </Typography>
+            <Button
+              component={Link}
+              href="/mobileapps"
+              variant="outlined"
+              className={classes.learnBtn}
+              onClick={() => {
+                setValue(1);
+                setSelectedIndex(2);
+              }}
+            >
+              <span style={{ marginRight: 10 }}>Learn More</span>
+              <ButtonArrow
+                width={10}
+                height={10}
+                fill={theme.palette.common.blue}
+              />
+            </Button>
+          </Grid>
+
+          <Grid
+            item
+            style={{
+              marginRight: matchesSM ? 0 : "5em",
+            }}
+          >
+            <img
+              className={classes.icon}
+              src={mobileAppsIcon}
+              alt="mobile icon"
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid item>
+        {" "}
+        {/*-----Website Development Block-----*/}
+        <Grid
+          container
+          direction="row"
+          justify={matchesSM ? "center" : undefined}
+          className={classes.serviceContainer}
+        >
+          <Grid
+            item
+            style={{
+              marginLeft: matchesSM ? 0 : "5em",
+              textAlign: matchesSM ? "center" : undefined,
+            }}
+          >
+            <Typography variant="h4">Website Development</Typography>
+            <Typography variant="subtitle1" className={classes.subtitle}>
+              Reach More. Discover More. Sell More.
+            </Typography>
+            <Typography variant="subtitle1">
+              Optimized for Search Engines. Build for speed.
+            </Typography>
+            <Button
+              component={Link}
+              href="/websites"
+              variant="outlined"
+              className={classes.learnBtn}
+              onClick={() => {
+                setValue(1);
+                setSelectedIndex(3);
+              }}
+            >
+              <span style={{ marginRight: 10 }}>Learn More</span>
+              <ButtonArrow
+                width={10}
+                height={10}
+                fill={theme.palette.common.blue}
+              />
+            </Button>
+          </Grid>
+
+          <Grid item>
+            <img
+              className={classes.icon}
+              src={websiteIcon}
+              alt="website icon"
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/*----- Revolution Block -----*/}
+      <Grid item>
+        <Grid
+          container
+          style={{ height: "100em", marginTop: "12em" }}
+          alignItems="center"
+          justify="center"
+        >
+          <Card className={classes.revolutionCard}>
+            <CardContent>
+              <Grid
+                container
+                direction="column"
+                style={{ textAlign: "center" }}
+              >
                 <Grid item>
-                  <Button
-                    component={Link}
-                    href="/estimate"
-                    className={classes.estimateBtn}
-                    variant="contained"
-                    onClick={() => setValue(5)}
-                  >
-                    Free Estimate
-                  </Button>
+                  <Typography variant="h3" gutterBottom>
+                    The Revolution
+                  </Typography>
                 </Grid>
-
                 <Grid item>
+                  <Typography
+                    variant="subtitle1"
+                    style={{ marginBottom: "1.5rem" }}
+                  >
+                    Beta non-disclosure agreement value proposition stealth
+                    launch party. Non-disclosure agreement value proposition
+                    bootstrapping startup creative direct mailing strategy
+                    technology funding marketing pitch holy grail influencer.
+                    {/* Branding infographic accelerator first mover advantage stock analytics business-to-business learning curve return on investment bootstrapping. Infographic research & development gamification responsive web design sales traction buyer.  */}
+                  </Typography>
                   <Button
                     component={Link}
                     href="/revolution"
@@ -194,306 +414,99 @@ export default function LandingPage({ setValue, setSelectedIndex }) {
                   </Button>
                 </Grid>
               </Grid>
-            </Grid>
-
-            <Grid sm item className={classes.animation}>
-              <Lottie options={defaultOptions} height={"100%"} width={"100%"} />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item>
-          {" "}
-          {/*-----Custom Development Block-----*/}
-          <Grid
-            container
-            direction="row"
-            justify={matchesSM ? "center" : undefined}
-            className={classes.serviceContainer}
-          >
-            <Grid
-              item
-              style={{
-                marginLeft: matchesSM ? 0 : "5em",
-                textAlign: matchesSM ? "center" : undefined,
-              }}
-            >
-              <Typography variant="h4">Custom Software Development</Typography>
-              <Typography variant="subtitle1" className={classes.subtitle}>
-                Save Time. Save Energy. Save Money.
-              </Typography>
-              <Typography variant="subtitle1">
-                Complete digital solutions, from investigation to{" "}
-                <span className={classes.specialText}>celebration.</span>
-              </Typography>
-              <Button
-                component={Link}
-                href="/customsoftware"
-                variant="outlined"
-                className={classes.learnBtn}
-                onClick={() => {setValue(1); setSelectedIndex(1)}}
-              >
-                <span style={{ marginRight: 10 }}>Learn More</span>
-                <ButtonArrow
-                  width={10}
-                  height={10}
-                  fill={theme.palette.common.blue}
-                />
-              </Button>
-            </Grid>
-
-            <Grid item>
-              <img
-                className={classes.icon}
-                src={customSoftwareIcon}
-                alt="custom software icon"
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item>
-          {" "}
-          {/*-----iOS/Android Block-----*/}
-          <Grid
-            container
-            direction="row"
-            justify={matchesSM ? "center" : "flex-end"}
-            className={classes.serviceContainer}
-          >
-            <Grid
-              item
-              style={{
-                textAlign: matchesSM ? "center" : undefined,
-              }}
-            >
-              <Typography variant="h4">iOS/Android App Development</Typography>
-              <Typography variant="subtitle1" className={classes.subtitle}>
-                Extend Functionality. Extend Access. Increase Engagement.
-              </Typography>
-              <Typography variant="subtitle1">
-                Integrate your web experience or create a standalone app
-                {matchesSM ? null : <br />} with either mobile platform.
-              </Typography>
-              <Button
-                component={Link}
-                href="/mobileapps"
-                variant="outlined"
-                className={classes.learnBtn}
-                onClick={() => {setValue(1); setSelectedIndex(2)}}
-              >
-                <span style={{ marginRight: 10 }}>Learn More</span>
-                <ButtonArrow
-                  width={10}
-                  height={10}
-                  fill={theme.palette.common.blue}
-                />
-              </Button>
-            </Grid>
-
-            <Grid
-              item
-              style={{
-                marginRight: matchesSM ? 0 : "5em",
-              }}
-            >
-              <img
-                className={classes.icon}
-                src={mobileAppsIcon}
-                alt="mobile icon"
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item>
-          {" "}
-          {/*-----Website Development Block-----*/}
-          <Grid
-            container
-            direction="row"
-            justify={matchesSM ? "center" : undefined}
-            className={classes.serviceContainer}
-          >
-            <Grid
-              item
-              style={{
-                marginLeft: matchesSM ? 0 : "5em",
-                textAlign: matchesSM ? "center" : undefined,
-              }}
-            >
-              <Typography variant="h4">Website Development</Typography>
-              <Typography variant="subtitle1" className={classes.subtitle}>
-                Reach More. Discover More. Sell More.
-              </Typography>
-              <Typography variant="subtitle1">
-                Optimized for Search Engines. Build for speed.
-              </Typography>
-              <Button
-                component={Link}
-                href="/websites"
-                variant="outlined"
-                className={classes.learnBtn}
-                onClick={() => {setValue(1); setSelectedIndex(3)}}
-              >
-                <span style={{ marginRight: 10 }}>Learn More</span>
-                <ButtonArrow
-                  width={10}
-                  height={10}
-                  fill={theme.palette.common.blue}
-                />
-              </Button>
-            </Grid>
-
-            <Grid item>
-              <img
-                className={classes.icon}
-                src={websiteIcon}
-                alt="website icon"
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        {/*----- Revolution Block -----*/}
-        <Grid item>
-          <Grid
-            container
-            style={{ height: "100em", marginTop: "12em" }}
-            alignItems="center"
-            justify="center"
-          >
-            <Card className={classes.revolutionCard}>
-              <CardContent>
-                <Grid
-                  container
-                  direction="column"
-                  style={{ textAlign: "center" }}
-                >
-                  <Grid item>
-                    <Typography variant="h3" gutterBottom>
-                      The Revolution
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      variant="subtitle1"
-                      style={{ marginBottom: "1.5rem" }}
-                    >
-                      Beta non-disclosure agreement value proposition stealth
-                      launch party. Non-disclosure agreement value proposition
-                      bootstrapping startup creative direct mailing strategy
-                      technology funding marketing pitch holy grail influencer.
-                      {/* Branding infographic accelerator first mover advantage stock analytics business-to-business learning curve return on investment bootstrapping. Infographic research & development gamification responsive web design sales traction buyer.  */}
-                    </Typography>
-                    <Button
-                      component={Link}
-                      href="/revolution"
-                      className={classes.learnBtnHero}
-                      variant="outlined"
-                      onClick={() => setValue(2)}
-                    >
-                      <span style={{ marginRight: 10 }}>Learn More</span>
-                      <ButtonArrow
-                        width={15}
-                        height={15}
-                        fill={theme.palette.common.blue}
-                      />
-                    </Button>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
-            <div className={classes.revolutionBackground} />
-          </Grid>
-        </Grid>
-        {/*----- About and Contact Block -----*/}
-        <Grid item>
-          <Grid
-            container
-            style={{ height: "80em" }}
-            direction="row"
-            alignItems="center"
-            className={classes.infoBackground}
-          >
-            <Grid
-              item
-              container
-              style={{
-                textAlign: matchesXS ? "center" : "inherit",
-              }}
-              direction={matchesXS ? "column" : "row"}
-            >
-              {/*---About Subsection---*/}
-              <Grid
-                item
-                sm
-                style={{
-                  marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em",
-                }}
-              >
-                <Grid container style={{marginBottom: matchesXS ? "10em" : 0}} direction="column">
-                  <Typography variant="h2" style={{ color: "white" }}>
-                    About Us
-                  </Typography>
-                  <Typography variant="subtitle2">
-                    Let's get personal.
-                  </Typography>
-                  <Grid item>
-                    <Button
-                      component={Link}
-                      href="/about"
-                      variant="outlined"
-                      style={{ color: "white", borderColor: "white" }}
-                      className={classes.learnBtn}
-                      onClick={() => setValue(3)}
-                    >
-                      <span style={{ marginRight: 10 }}>Learn More</span>
-                      <ButtonArrow width={10} height={10} fill="white" />
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Grid>
-
-              {/*---Contact Subsection---*/}
-              <Grid
-                item
-                sm
-                style={{
-                  marginRight: matchesXS ? 0 : matchesSM ? "2em" : "5em",
-                  textAlign: matchesXS ? "center" : "right",
-                }}
-              >
-                <Grid container direction="column">
-                  <Typography variant="h2" style={{ color: "white" }}>
-                    Contact Us
-                  </Typography>
-                  <Typography variant="subtitle2">Say Hi!</Typography>
-                  <Grid item>
-                    <Button
-                      component={Link}
-                      href="/contact"
-                      variant="outlined"
-                      style={{ color: "white", borderColor: "white" }}
-                      className={classes.learnBtn}
-                      onClick={() => setValue(4)}
-                    >
-                      <span style={{ marginRight: 10 }}>Learn More</span>
-                      <ButtonArrow width={10} height={10} fill="white" />
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-            {/* <div className={classes.infoBackground} /> */}
-          </Grid>
-        </Grid>
-
-        {/*-----Call to Action Block-----*/}
-        <Grid item>
-          <CallToAction setValue={setValue} setSelectedIndex={setSelectedIndex} />
+            </CardContent>
+          </Card>
+          <div className={classes.revolutionBackground} />
         </Grid>
       </Grid>
-    </>
+      {/*----- About and Contact Block -----*/}
+      <Grid item>
+        <Grid
+          container
+          style={{ height: "80em" }}
+          direction="row"
+          alignItems="center"
+          className={classes.infoBackground}
+        >
+          <Grid
+            item
+            container
+            style={{
+              textAlign: matchesXS ? "center" : "inherit",
+            }}
+            direction={matchesXS ? "column" : "row"}
+          >
+            {/*---About Subsection---*/}
+            <Grid
+              item
+              sm
+              style={{
+                marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em",
+              }}
+            >
+              <Grid
+                container
+                style={{ marginBottom: matchesXS ? "10em" : 0 }}
+                direction="column"
+              >
+                <Typography variant="h2" style={{ color: "white" }}>
+                  About Us
+                </Typography>
+                <Typography variant="subtitle2">Let's get personal.</Typography>
+                <Grid item>
+                  <Button
+                    component={Link}
+                    href="/about"
+                    variant="outlined"
+                    style={{ color: "white", borderColor: "white" }}
+                    className={classes.learnBtn}
+                    onClick={() => setValue(3)}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            {/*---Contact Subsection---*/}
+            <Grid
+              item
+              sm
+              style={{
+                marginRight: matchesXS ? 0 : matchesSM ? "2em" : "5em",
+                textAlign: matchesXS ? "center" : "right",
+              }}
+            >
+              <Grid container direction="column">
+                <Typography variant="h2" style={{ color: "white" }}>
+                  Contact Us
+                </Typography>
+                <Typography variant="subtitle2">Say Hi!</Typography>
+                <Grid item>
+                  <Button
+                    component={Link}
+                    href="/contact"
+                    variant="outlined"
+                    style={{ color: "white", borderColor: "white" }}
+                    className={classes.learnBtn}
+                    onClick={() => setValue(4)}
+                  >
+                    <span style={{ marginRight: 10 }}>Learn More</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+          {/* <div className={classes.infoBackground} /> */}
+        </Grid>
+      </Grid>
+
+      {/*-----Call to Action Block-----*/}
+      <Grid item>
+        <CallToAction setValue={setValue} setSelectedIndex={setSelectedIndex} />
+      </Grid>
+    </Grid>
   );
 }

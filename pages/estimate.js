@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 import axios from "axios";
 import { cloneDeep } from "lodash";
 import Lottie from "react-lottie";
@@ -22,7 +23,6 @@ import estimateAnimation from "../src/animations/estimateAnimation/data.json";
 
 const forwardArrow = "/assets/forwardArrow.svg";
 const forwardArrowDisabled = "/assets/forwardArrowDisabled.svg";
-
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -619,7 +619,7 @@ export default function Estimate({ setValue, setSelectedIndex }) {
         style={{ marginBottom: "1.25em" }}
       >
         <Grid item xs={2}>
-          <img src="/assets/check.svg"alt="checkmark" />
+          <img src="/assets/check.svg" alt="checkmark" />
         </Grid>
 
         <Grid item xs={10}>
@@ -723,22 +723,29 @@ export default function Estimate({ setValue, setSelectedIndex }) {
   };
 
   const estimateDisabled = () => {
-    let disabled = true
+    let disabled = true;
 
-    const emptySelections = questions.map(question => question.options.filter(option => option.selected)).filter(question => question.length === 0)
+    const emptySelections = questions
+      .map((question) => question.options.filter((option) => option.selected))
+      .filter((question) => question.length === 0);
 
     if (questions.length === 2) {
       if (emptySelections.length === 1) {
-        disabled = false
+        disabled = false;
       }
     } else if (questions.length === 1) {
-      disabled = true
-    } else if (emptySelections.length < 3 && questions[questions.length - 1].options.filter(option => option.selected).length > 0) {
-      disabled = false
+      disabled = true;
+    } else if (
+      emptySelections.length < 3 &&
+      questions[questions.length - 1].options.filter(
+        (option) => option.selected
+      ).length > 0
+    ) {
+      disabled = false;
     }
 
-    return disabled
-  }
+    return disabled;
+  };
   const websiteSelection = (
     <Grid container direction="column" style={{ marginTop: "14em" }}>
       {/*--- Platform Review Checklist ---*/}
@@ -761,6 +768,11 @@ export default function Estimate({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="row">
+      <Head>
+        <title key="title">
+          Free Custom Software Estimate | DAS Development
+        </title>
+      </Head>
       <Grid
         item
         container
@@ -885,7 +897,10 @@ export default function Estimate({ setValue, setSelectedIndex }) {
           <Grid item>
             <IconButton disabled={prevNavDisabled()} onClick={previousQuestion}>
               {prevNavDisabled() ? (
-                <img src="/assets/backArrowDisabled.svg" alt="Back arrow disabled" />
+                <img
+                  src="/assets/backArrowDisabled.svg"
+                  alt="Back arrow disabled"
+                />
               ) : (
                 <img src="/assets/backArrow.svg" alt="Previous question" />
               )}
@@ -1013,7 +1028,7 @@ export default function Estimate({ setValue, setSelectedIndex }) {
                   variant="body1"
                   align={matchesSM ? "center" : undefined}
                   paragraph
-                  style={{lineHeight: 1.15}}
+                  style={{ lineHeight: 1.15 }}
                 >
                   We can create this digital solution for an estimated{" "}
                   <span className={classes.specialText}>

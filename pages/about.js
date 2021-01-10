@@ -1,9 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import CallToAction from "../src/ui/CallToAction"
+import CallToAction from "../src/ui/CallToAction";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Typography, useMediaQuery } from "@material-ui/core";
-
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -33,13 +32,22 @@ export default function About({ setValue, setSelectedIndex }) {
 
   return (
     <Grid container direction="column">
-      {/* Title Tag for SEO */}
+      {/* SEO */}
       <Head>
         <title key="title">About Us - History | DAS Development</title>
+        <meta
+          name="description"
+          key="description"
+          content="We provide one of the fastest, most modern, affordable, and aesthetic software design and development services in North America. Get a free online estimate now!"
+        />
       </Head>
 
       {/*-----MISSION SECTION-----*/}
-      <Grid item className={classes.rowContainer} style={{ marginTop: matchesMD ? "2em" : "5em" }}>
+      <Grid
+        item
+        className={classes.rowContainer}
+        style={{ marginTop: matchesMD ? "2em" : "5em" }}
+      >
         <Typography
           align={matchesMD ? "center" : undefined}
           variant="h2"

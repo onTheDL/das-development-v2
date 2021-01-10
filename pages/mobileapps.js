@@ -61,6 +61,11 @@ export default function MobileApps({ setValue, setSelectedIndex }) {
         <title key='title'>
           iOS/Android App Design and Development | DAS Development
         </title>
+        <meta
+          name="description"
+          key="description"
+          content="Mobile Apps Made Easy | With our cutting-edge mobile app development process, we build beautifully designed, carefully crafted apps for both iOS and Android."
+        />
       </Head>
       <Grid
         item

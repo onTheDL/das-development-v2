@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Head from "next/head"
+import Head from "next/head";
 import axios from "axios";
-import Link from "../src/Link"
+import Link from "../src/Link";
 import ButtonArrow from "../src/ui/ButtonArrow";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
@@ -15,8 +15,6 @@ import {
   CircularProgress,
   Snackbar,
 } from "@material-ui/core";
-
-
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -184,15 +182,24 @@ export default function Contact({ setValue, setSelectedIndex }) {
   const buttonContents = (
     <>
       Send Message
-      <img src="/assets/send.svg" alt="paper airplane" style={{ marginLeft: "1em" }} />
+      <img
+        src="/assets/send.svg"
+        alt="paper airplane"
+        style={{ marginLeft: "1em" }}
+      />
     </>
   );
 
   return (
-    <Grid container direction='row'>
+    <Grid container direction="row">
       {/* Title Tag for SEO */}
       <Head>
-        <title key='title'>Contact Us | DAS Development</title>
+        <title key="title">Contact Us | DAS Development</title>
+        <meta
+          name="description"
+          key="description"
+          content="We'll guide you through the custom software design and development process. Send us a message with your ideas or questions to get started!"
+        />
       </Head>
 
       {/*----- FORM SECTION -----*/}
@@ -270,12 +277,7 @@ export default function Contact({ setValue, setSelectedIndex }) {
             </Grid>
 
             {/*--- Name, Phone, Email Text Fields---*/}
-            <Grid
-              item
-              container
-              direction="column"
-              style={{ width: "20em" }}
-            >
+            <Grid item container direction="column" style={{ width: "20em" }}>
               <Grid item style={{ marginBottom: "0.5em" }}>
                 <TextField
                   label="Name"

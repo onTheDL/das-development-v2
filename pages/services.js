@@ -57,7 +57,13 @@ export default function Services({ setValue, setSelectedIndex }) {
         <title key="title">
           Reliable Custom Software Development Services | DAS Development
         </title>
+        <meta
+          name="description"
+          key="description"
+          content="Cutting-edge software, mobile app, and website development services with sleek custom designs - get a free online estimate instantly!"
+        />
       </Head>
+
       <Grid
         item
         style={{

@@ -53,6 +53,11 @@ export default function Websites({ setValue, setSelectedIndex }) {
         <title key="title">
           Stunning Custom Website Design | DAS Development
         </title>
+        <meta
+          name="description"
+          key="description"
+          content="Completely custom designed and built from scratch to be blazing fast. Optimized code, server-side rendering, and perfect responsive design | 99% PageSpeed Score"
+        />
       </Head>
       <Grid
         item
@@ -276,12 +281,20 @@ export default function Websites({ setValue, setSelectedIndex }) {
           style={{ marginLeft: matchesSM ? 0 : "1em" }}
           className={classes.paragraphContainer}
         >
-          <Typography variant="body1" align={matchesSM ? "center" : undefined} paragraph>
+          <Typography
+            variant="body1"
+            align={matchesSM ? "center" : undefined}
+            paragraph
+          >
             Hey, Doc, we better back up, we don't have enough roads to get up to
             88. Alright, let's set your destination time. This is the exact time
             you left?
           </Typography>
-          <Typography variant="body1" align={matchesSM ? "center" : undefined} paragraph>
+          <Typography
+            variant="body1"
+            align={matchesSM ? "center" : undefined}
+            paragraph
+          >
             Save the clock tower, save the clock tower.
           </Typography>
         </Grid>
@@ -290,7 +303,6 @@ export default function Websites({ setValue, setSelectedIndex }) {
       <Grid item>
         <CallToAction setValue={setValue} setSelectedIndex={setSelectedIndex} />
       </Grid>
-      
     </Grid>
   );
 }

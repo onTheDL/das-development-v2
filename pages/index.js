@@ -149,11 +149,15 @@ export default function LandingPage({ setValue, setSelectedIndex }) {
   };
   return (
     <Grid container direction="column" className={classes.mainContainer}>
-
       <Head>
         <title key="title">
           Custom Software, iOS / Android Apps, and Websites | DAS Development
         </title>
+        <meta
+          name="description"
+          key="description"
+          content="Pristine software custom-designed from the ground up with cutting-edge optimizations. Use our free estimate calculator to check your project cost!"
+        />
       </Head>
       <Grid item>
         {" "}

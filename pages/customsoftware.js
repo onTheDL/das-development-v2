@@ -130,8 +130,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
             >
               Let me show you my plan for sending you home. Please excuse the
               crudity of this model, I didn't have time to build it to scale or
-              to paint it. Indeed I will, roll em. I, Doctor Emmett Brown, am
-              about to embark on an historic journey.
+              to paint it. Indeed I will, roll em.
             </Typography>
 
             <Typography
@@ -149,18 +148,6 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
               variant="body1"
               paragraph
             >
-              Which one's your pop? Yeah, but I never picked a fight in my
-              entire life. Precisely. Look me up when you get there, guess I'll
-              be about 47. Look, George, I'm telling you George, if you do not
-              ask Lorraine to that dance, I'm gonna regret it for the rest of my
-              life.
-            </Typography>
-
-            <Typography
-              align={matchesMD ? "center" : undefined}
-              variant="body1"
-              paragraph
-            >
               I don't know what it is but when I kiss you, it's like kissing my
               brother. I guess that doesn't make any sense, does it?
             </Typography>
@@ -170,9 +157,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
               variant="body1"
               paragraph
             >
-              I think we need a rematch. McFly. Marty, you didn't fall asleep,
-              did you? Who, who? He laid out Biff in one punch. I never knew he
-              had it in him. He never stood up to Biff in his life.
+              I think we need a rematch. McFly. 
             </Typography>
           </Grid>
         </Grid>
@@ -313,7 +298,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
           <Grid item md>
             <Lottie
               options={documentsOptions}
-              isStopped={true}
+              isStopped={false}
               style={{ maxHeight: 275, maxWidth: 275, minHeight: 250 }}
             />
           </Grid>
@@ -330,7 +315,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
           <Grid item md>
             <Lottie
               options={scaleOptions}
-              isStopped={true}
+              isStopped={false}
               style={{ maxHeight: 260, maxWidth: 280 }}
             />
           </Grid>
@@ -446,7 +431,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
           <Grid item md>
             <Lottie
               options={automationOptions}
-              isStopped={true}
+              isStopped={false}
               style={{ maxHeight: 290, maxWidth: 280 }}
             />
           </Grid>
@@ -463,7 +448,7 @@ export default function CustomSoftware({ setValue, setSelectedIndex }) {
           <Grid item md>
             <Lottie
               options={uxOptions}
-              isStopped={true}
+              isStopped={false}
               style={{ maxHeight: 310, maxWidth: 155 }}
             />
           </Grid>

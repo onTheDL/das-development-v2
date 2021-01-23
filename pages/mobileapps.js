@@ -178,7 +178,7 @@ export default function MobileApps({ setValue, setSelectedIndex }) {
           <Lottie
             options={defaultOptions}
             style={{ maxWidth: "20em" }}
-            isStopped={true}
+            isStopped={false}
           />
         </Grid>
 

@@ -180,7 +180,7 @@ export default function Revolution({ setValue, setSelectedIndex }) {
         <Grid item container justify="flex-end" lg>
           <Lottie
             options={defaultOptions}
-            isStopped={true}
+            isStopped={false}
             style={{ maxWidth: "40em", margin: 0 }}
           />
         </Grid>

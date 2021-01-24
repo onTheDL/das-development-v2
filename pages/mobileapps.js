@@ -177,7 +177,7 @@ export default function MobileApps({ setValue, setSelectedIndex }) {
         <Grid item md>
           <Lottie
             options={defaultOptions}
-            style={{ maxWidth: "20em" }}
+            style={{ maxWidth: matchesMD ? "15em" : "20em", height: matchesMD ? "20em" : undefined }}
             isStopped={false}
           />
         </Grid>
@@ -212,7 +212,7 @@ export default function MobileApps({ setValue, setSelectedIndex }) {
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{marginBottom: "15em"}}
+        style={{marginBottom: "15em", display: "grid"}}
       >
         {/*---Increase Functionality Block---*/}
         <Grid item container direction="column" alignItems="center" md>

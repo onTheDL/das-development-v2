@@ -141,7 +141,7 @@ export default function LandingPage({ setValue, setSelectedIndex }) {
 
   const defaultOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
